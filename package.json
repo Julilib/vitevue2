@@ -1,0 +1,21 @@
+{
+  "name": "vite-vue-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env VITE_APP=vite vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "sass": "^1.57.1",
+    "vue": "^2.7.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "cross-env": "^7.0.3",
+    "vite": "^4.0.0",
+    "vite-plugin-html-template": "^1.1.5"
+  }
+}
