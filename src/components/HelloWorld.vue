@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import './HelloWorld.scss';
 
 defineProps({
   msg: String,
@@ -11,7 +10,7 @@ const count = ref(0);
 
 <template>
   <div class="card">
-    <h1 class="myStyleNotLoading">SFC with scss NOT loading</h1>
+    <h1 class="myStyleNotLoading">THIS SHOULD BE PINK</h1>
     <h1>{{ msg }}</h1>
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
@@ -33,4 +32,4 @@ const count = ref(0);
   </div>
 </template>
 
-<!--<style lang="scss" src="./HelloWorld.scss"></style>-->
+<style lang="scss" src="./HelloWorld.scss"></style>
