@@ -7,7 +7,7 @@ import HelloWorld from './components/HelloWorld.vue';
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
-    <HelloWorld msg="Vite + Vue" />
+    <HelloWorld msg="Vite + Vue 2" />
   </div>
 </template>
 
