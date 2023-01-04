@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import './HelloWorld.scss';
 
 defineProps({
   msg: String,
@@ -32,4 +33,4 @@ const count = ref(0);
   </div>
 </template>
 
-<style lang="scss" src="./HelloWorld.scss"></style>
+<!--<style lang="scss" src="./HelloWorld.scss"></style>-->
