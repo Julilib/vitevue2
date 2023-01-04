@@ -10,7 +10,7 @@ const count = ref(0);
 
 <template>
   <div class="card">
-    <h1 class="myStyleNotLoading">Tittle in SFC with scss NOT loading</h1>
+    <h1 class="myStyleNotLoading">SFC with scss NOT loading</h1>
     <h1>{{ msg }}</h1>
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
