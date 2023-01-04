@@ -32,12 +32,4 @@ const count = ref(0);
   </div>
 </template>
 
-<style lang="scss">
-.myStyleNotLoading {
-  background-color: red;
-  color: pink;
-}
-.read-the-docs {
-  color: #888;
-}
-</style>
+<style lang="scss" src="./HelloWorld.scss"></style>

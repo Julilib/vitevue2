@@ -31,6 +31,7 @@ export default defineConfig(() => {
             prepends += `$app: ${app};`;
             prepends += `@import "@/style.scss";`;
             prepends += `@import "@/assets/vite/scss/colors.scss";`;
+            // prepends += `@import "@/components/HelloWorld.scss";`; //Here will load it
             return prepends;
           },
         },
