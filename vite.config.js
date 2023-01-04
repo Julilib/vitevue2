@@ -4,54 +4,56 @@ import vue from '@vitejs/plugin-vue2';
 import htmlTemplate from 'vite-plugin-html-template';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    htmlTemplate.default({
-      pages: {
-        index: {
-          template: 'public/index.html',
-          entry: 'src/main.js',
+export default defineConfig(() => {
+  process.env = { ...process.env, ...loadEnv(process.cwd(), '') };
+  const app = process.env.VITE_APP;
+
+  return {
+    plugins: [
+      vue(),
+      htmlTemplate.default({
+        pages: {
+          index: {
+            template: 'public/index.html',
+            entry: 'src/main.js',
+          },
+          logout: {
+            entry: 'src/main.js',
+          },
         },
-        logout: {
-          entry: 'src/main.js',
-        },
-      },
-    }),
-  ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: () => {
-          let prepends = '';
-          prepends += `@import "@/style.scss";`;
-          prepends += `@import "@/assets/vite/scss/colors.scss";`;
-          // prepends += `@import "@/components/HelloWorld.scss";`; //Here will load it
-          return prepends;
+      }),
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @import "@/style.scss";
+            @import "@/assets/vite/scss/colors.scss";
+            `,
         },
       },
     },
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        homepage: 'public/index.html',
-        logout: 'public/logout.html',
-      },
-      output: {
-        entryFileNames: '[name].bundle.js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]',
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
       },
     },
-    outDir: path.resolve(__dirname, 'dist/'),
-    sourcemap: true,
-    emptyOutDir: true,
-    minify: true,
-  },
+    build: {
+      rollupOptions: {
+        input: {
+          homepage: 'public/index.html',
+          logout: 'public/logout.html',
+        },
+        output: {
+          entryFileNames: '[name].bundle.js',
+          chunkFileNames: '[name].js',
+          assetFileNames: '[name].[ext]',
+        },
+      },
+      outDir: path.resolve(__dirname, 'dist/' + app),
+      sourcemap: true,
+      emptyOutDir: true,
+      minify: true,
+    },
+  };
 });
