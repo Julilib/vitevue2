@@ -30,6 +30,13 @@ export default defineConfig(() => {
             @import "@/style.scss";
             @import "@/assets/vite/scss/colors.scss";
             `,
+          // NOT WORKING:
+          // additionalData: () => {
+          // let prepends = '';
+          // prepends += `$app: ${app};`;
+          // prepends += `@import "@/style.scss";`;
+          // prepends += `@import "@/assets/vite/scss/colors.scss";`;
+          // return prepends;
         },
       },
     },
